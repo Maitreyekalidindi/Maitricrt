@@ -44,7 +44,8 @@ There is no nth node in the list
 
 
 code:
-class Node:
+
+      class Node:
     def __init__(self,data):
         self.data=data
         self.next=None
@@ -58,13 +59,14 @@ class linkedlist:
         else:
             self.tail.next=n
             self.tail=n
-            
-  
-    def show(self):
+    def show(self,pos):
+        c1=0
         temp=self.head
         while temp!=None:
-            print(temp.data)
             temp=temp.next
+            c1=c1+1
+            if c1==pos:
+                print(temp.data,"is the nth node element in the list")
 l1=linkedlist()
 c=0
 while True:
@@ -73,4 +75,10 @@ while True:
             break
     else:
         l1.create(x)
-l1.show()
+        c=c+1
+n=int(input())
+pos=c-n
+if pos>0:
+    l1.show(pos)
+else:
+    print("There is no nth node in the list")
