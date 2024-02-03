@@ -1,0 +1,139 @@
+undirected weighted graph
+
+
+
+
+def addNode(v):
+    global n
+    if v in nodes:
+        print("v is already existed")
+    else:
+        nodes.append(v)
+        n=n+1
+    for x in graph:
+        x.append(0)
+    temp=[]
+    for i in range(n):
+        temp.append(0)
+    graph.append(temp)
+def show():
+    for i in range(n):
+        for j in range(n):
+            print(graph[i][j],end=" ")
+        print()
+def addEdge(node1,node2,weight):
+    if node1 not in nodes:
+        print(node1,"is not available in graph")
+    elif node2 not in nodes:
+        print(node2,"not available in graph")
+    else:
+        i=nodes.index(node1)
+        j=nodes.index(node2)
+        graph[i][j]=weight
+        graph[j][i]=weight
+nodes=[]
+graph=[]
+n=0
+while True:
+    print()
+    print("1.add node\n2.add edge\n3.print graph\n4.exit")
+    ch=int(input("enter your choice"))
+    if ch==1:
+        v=input("enter node")
+        addNode(v)
+    elif ch==2:
+        node1=input("enter node1")
+        node2=input("enter node2")
+        weight=input("enter weight")
+        addEdge(node1,node2,weight)
+    elif ch==3:
+        show()
+    elif ch==4:
+        break
+    else:
+        print("Invalid choice")
+
+
+output:
+
+
+
+1.add node
+2.add edge
+3.print graph
+4.exit
+enter your choice1
+enter nodea
+
+1.add node
+2.add edge
+3.print graph
+4.exit
+enter your choice1
+enter nodeb
+
+1.add node
+2.add edge
+3.print graph
+4.exit
+enter your choice1
+enter nodec
+
+1.add node
+2.add edge
+3.print graph
+4.exit
+enter your choice1
+enter noded
+
+1.add node
+2.add edge
+3.print graph
+4.exit
+enter your choice2
+enter node1a
+enter node2b
+enter weight4
+
+1.add node
+2.add edge
+3.print graph
+4.exit
+enter your choice2
+enter node1b
+enter node2c
+enter weight5
+
+1.add node
+2.add edge
+3.print graph
+4.exit
+enter your choice2
+enter node1c
+enter node2d
+enter weight6
+
+1.add node
+2.add edge
+3.print graph
+4.exit
+enter your choice2
+enter node1d
+enter node2a
+enter weight7
+
+1.add node
+2.add edge
+3.print graph
+4.exit
+enter your choice3
+0 4 0 7 
+4 0 5 0 
+0 5 0 6 
+7 0 6 0 
+
+1.add node
+2.add edge
+3.print graph
+4.exit
+enter your choice4
